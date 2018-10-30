@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class Boletin_7_1{
     private static Scanner leer = new Scanner(System.in);
-    private static Libro libro1 = new Libro("Harry Potter","J.K. Rowling",0,0);
+    private static Libro libro1 = new Libro("Harry Potter","J.K. Rowling",1,1);
 
     private static int menu(){
         int select;
@@ -37,23 +37,29 @@ public class Boletin_7_1{
         do{
             opcion = menu();
             switch(opcion){
-                case 0: System.out.println("\n[*] Ata logo! :)"); break;
-                case 1: System.out.println("\n[*] Datos do libro:\n" + libro1.toString()); break;
+                case 0: 
+                    System.out.println("\n[*] Ata logo! :)"); 
+                    break;
+                case 1: 
+                    System.out.println("\n[*] Datos do libro:\n" + libro1.toString()); 
+                    break;
                 case 2: 
-                    if(libro1.prestar(1)){
+                    if(libro1.prestar()){
                         System.out.println("\n[*] Operación realizada correctamente.");
                     }else{
                         System.out.println("\n[*] Operación fallida. Porfavor, inténtelo de nuevo.");
                     }
                     break;
                 case 3: 
-                    if(libro1.devolver(1)){
+                    if(libro1.devolver()){
                         System.out.println("\n[*] Operación realizada correctamente.");
                     }else{
                         System.out.println("\n[*] Operación fallida. Porfavor, inténtelo de nuevo.");
                     }
                     break;
-                default: System.out.println("\n[*] Formato incorrecto."); break;
+                default: 
+                    System.out.println("\n[*] Formato incorrecto."); 
+                    break;
             }
         }while(opcion != 0);
     }

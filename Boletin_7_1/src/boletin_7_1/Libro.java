@@ -61,24 +61,23 @@ public class Libro{
      */
     @Override
     public String toString(){
-        String datos = "-\tTitulo: " + titulo + "\n-\tAutor: " + autor + "\n-\tNumero de exemplares: " + numExemplares + "\n-\tNumero de exemplares prestados: " + numPrestados;
-        return datos;
+        return "-\tTitulo: " + titulo + "\n-\tAutor: " + autor + "\n-\tNumero de exemplares: " + numExemplares + "\n-\tNumero de exemplares prestados: " + numPrestados;
     }
     
-    public boolean prestar(int cantidade){
-        if(cantidade > 0 && numExemplares > 0 && numExemplares - cantidade >= 0){
-            numExemplares -= cantidade;
-            numPrestados += cantidade;
+    public boolean prestar(){
+        if(numExemplares > 0){
+            numExemplares--;
+            numPrestados++;
             return true;
         }else{
             return false;
         }
     }
     
-    public boolean devolver(int cantidade){
-        if(cantidade > 0 && numPrestados > 0 && numPrestados - cantidade >= 0){
-            numExemplares += cantidade;
-            numPrestados -= cantidade;
+    public boolean devolver(){
+        if(numPrestados > 0){
+            numExemplares++;
+            numPrestados--;
             return true;
         }else{
             return false;
